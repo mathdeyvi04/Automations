@@ -2,6 +2,7 @@
 
 - [Objetivo](#objetivo)
 - [Absorção de Caminho](#absorção-de-caminho)
+- [Tag de Caminho](#tag-de-caminho)
 
 # Objetivo
 
@@ -49,6 +50,51 @@ Caso você deseje adicionar mais informações e mais cores, é possível:
 \d    # Data no formato "Dia da Semana Mês Dia"
 ```
 
+# Tag de Caminho
+
+Por vezes, acessar um determinado diretório é uma tarefa difícil, pois exige que um caminho seja
+percorrido utilizando `cd` e `ls` diversas vezes.
+
+Entretanto, é interessante utilizar `alias=` para evitar percorrer os comandos. Utilizando essa ferramenta,
+torna-se possível apenas digitar o nome desejado da pasta e o terminal será automaticamente direcionado
+para ela.
+
+- Execute o comando `nano ~/.bashrc`. 
+  - Isso abrirá um arquivo no sistema linux responsável por personalizar e configurar o ambiente do terminal.
+
+- Adicione ao arquivo:
+
+```
+#######################################
+# Cria um `alias` para o diretório de execução,
+# automatiza o `source ~/.bashrc`.
+# Caso seja digitado um `alias` já existente, haverá 
+# erro de ambiguidade, logo atente-se a isso.
+# 
+# Argumentos:
+#   $1 - Nome Desejado Para Alias do Diretório
+#
+# Returno:
+#   Nada
+#######################################
+add_alias(){
+  local name=$1
+
+  if [ -z "$name" ]; then
+    echo "Faltando nome de alias"
+    return 1
+  fi
+
+  echo "alias '$name'='cd $(pwd)'" >> ~/.bashrc
+
+  source ~/.bashrc
+}
+```
+- Execute `source ~/.bashrc`
+
+A partir disso, encontrar seus diretórios de trabalho será muito mais fácil.
+
+Para deletar determinados `alias`, basta abrir novamente `bashrc` e apagar a linha correspondente.
 
 
 
