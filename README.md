@@ -8,8 +8,7 @@
 
 Reunir e disponibilizar códigos e scripts específicos capazez de oferecer conveniências em ambiente Linux.
 
-Códigos `bash` triviais apenas serão acrescentados e descritos neste arquivo, enquanto códigos mais 
-complexos estarão apenas descritos e suas pastas referenciadas.
+Códigos `bash` triviais apenas serão acrescentados e descritos neste arquivo, enquanto códigos mais complexos estarão apenas descritos e suas pastas referenciadas.
 
 # Absorção de Caminho
 
@@ -95,9 +94,6 @@ add_alias(){
 A partir disso, encontrar seus diretórios de trabalho será muito mais fácil.
 
 Para deletar determinados `alias`, basta abrir novamente `bashrc` e apagar a linha correspondente.
-
-
-
 
 
 
